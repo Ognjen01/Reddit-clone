@@ -1,0 +1,38 @@
+
+<div class="col-md-4 offset-md-4 mt-4 center">
+  <div class="outlinedDiv" style="margin-top: 100px;">
+    <h2>Registration</h2>
+    <form novalidate #registrationForm="ngForm" (ngSubmit)="register($event)">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.username"
+          #usernameNgModel="ngModel" required minlength="5" appCustomValidator>
+        <small *ngIf="usernameNgModel.touched && usernameNgModel.errors?.['required']" class="text-danger">
+          Username is required</small>
+        <small *ngIf="usernameNgModel.touched && usernameNgModel.errors?.['minlength']" class="text-danger">
+          Username must be at least five characters long</small>
+        <!-- <small class="text-danger" *ngIf="usernameNgModel.touched && usernameNgModel.errors?.['testError']">
+          Custom validation is not satisfied</small> -->
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" #emailNgModel="ngModel" class="form-control" id="email" name="email" [(ngModel)]="user.email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$">
+        <small *ngIf="emailNgModel.touched && emailNgModel.errors?.['required']" class="text-danger">
+          Email is required</small>
+        <small *ngIf="emailNgModel.touched && emailNgModel.errors?.['pattern']" class="text-danger">
+          Email not valid</small>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password">
+      </div>
+      <div class="mb-3">
+        <label for="confPassword" class="form-label">Confirm password</label>
+        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+          [(ngModel)]="user.confirmPassword">
+      </div>
+      <button type="submit" class="btn btn-primary" >Register</button> 
+      <!-- Frma je promjenjena na submit -->
+    </form>
+  </div>
+</div>

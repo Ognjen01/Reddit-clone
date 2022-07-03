@@ -1,0 +1,21 @@
+.rotateimg180 {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  .row {
+    width: 100%;
+    vertical-align:middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .rowLeft {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "523748715917",
+    "project_id": "redditclone-e4e00",
+    "storage_bucket": "redditclone-e4e00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523748715917:android:d00358e23b014792a421c4",
+        "android_client_info": {
+          "package_name": "com.ognjenlazic.reddit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523748715917-bvkd060o82hoptde3t601u2ekulao565.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZuV2M-2U20axM4cHXsEdTXcPC2AzMKMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523748715917-bvkd060o82hoptde3t601u2ekulao565.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

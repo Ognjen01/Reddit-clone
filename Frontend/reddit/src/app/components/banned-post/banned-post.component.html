@@ -1,0 +1,17 @@
+<div style="background-color:whitesmoke; border-radius: 10px;">
+    <div>
+        <app-text-post [post]="post" *ngIf="report.postId != null && isPostLoaded"></app-text-post>
+        <app-comment *ngIf="report.commentId != null && isCommentLoaded" [comment]="commentData"></app-comment>
+        <div style="padding: 10px;">
+            <div>
+                <h6>Reason: {{report.reason}}</h6>
+                <h6>User: u/{{user.username}}</h6>
+            </div>
+            <div style="display: flex;">
+                <button type="submit" class="btn btn-primary" style="border-radius: 10px;" (click)="acceptReport($event)">Accept</button>
+                <button type="submit" class="btn btn-danger"
+                    style="border-radius: 10px; margin-left: 10px;" (click)="declineReport($event)">Decline</button>
+            </div>
+        </div>
+    </div>
+</div>

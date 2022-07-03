@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" style="padding:5px;">
+  <div class="container">
+    <a href="#" class="navbar-brand" style="padding: 5px;">
+      <img src="assets/reddit_icon.png" height="45px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="homeClick($event)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  *ngIf="currentLoggedUser != null" (click)="profileClick($event)">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="currentLoggedUser != null" (click)="addPostClick($event)">Add post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="currentLoggedUser != null" (click)="createCommunityClick($event)">Crete community</a>
+        </li>
+
+        <li class="nav-item" *ngIf="currentLoggedUser?.userType == 'ADMIN'">
+          <a class="nav-link" *ngIf="currentLoggedUser != null" (click)="allReports($event)">All reports</a>
+        </li>
+      </ul>
+    </div>
+    <form class="d-flex">
+      <button class="btn btn-outline-secondary" type="submit" *ngIf="currentLoggedUser == null" (click)="login($event)">Login or Sign up</button>
+      <button class="btn btn-outline-secondary" type="submit" *ngIf="currentLoggedUser != null" (click)="logoutClick($event)">Logout</button>
+    </form>
+  </div>
+</nav>

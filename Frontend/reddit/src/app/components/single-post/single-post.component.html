@@ -1,0 +1,28 @@
+<main style="padding-top: 65px;" class="col-md-1 offset-md-2 mt-1 center">
+  <section class="banners">
+    <div *ngIf="arePostsLoaded && areCommentsLoaded">
+      <app-text-post [post]="post"></app-text-post>
+
+  <div style="padding: 30px; display: flex; justify-content: center;" *ngIf="comments == null || comments?.length != 0"> 
+
+    <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+      <option value='' disabled selected>Popularity sort</option>
+      <option value="sortPopular">Unpopular</option>
+      <option value="sortUnpopular">Popular</option>
+    </select>
+  
+    <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)" style="margin-left: 10px;">
+      <option value='' disabled selected>Date sort</option>
+      <option value="sortNewest">Newest</option>
+      <option value="sortOldest">Oldest</option>
+    </select>
+
+  </div>
+      <div *ngFor="let comment of comments" style="padding-top: 10px;">
+        <div>
+          <app-comment [comment]="comment"></app-comment>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

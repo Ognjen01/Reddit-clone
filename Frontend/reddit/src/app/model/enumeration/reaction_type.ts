@@ -1,0 +1,4 @@
+enum ReactionType {
+    UPVOTE,
+    DOWNVOTE
+}

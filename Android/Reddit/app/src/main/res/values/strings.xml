@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Reddit</string>
+    <string name="title_activity_animated_splash_screen">AnimatedSplashScreen</string>
+</resources>

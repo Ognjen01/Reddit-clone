@@ -1,0 +1,17 @@
+<div style="text-align:center;">
+  <div class="outlinedDiv" style="width: 300px;">
+    <h2>New report</h2>
+    <form>
+      <div class="mb-3" style="position: relative;">
+        <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+          <option value='' disabled selected>Select report reason</option>
+          <option *ngFor="let name of enumKeys; let i = index" [value]="name"> {{enumKeys[i]}} </option>
+        </select>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary" (click)="report($event)" mat-dialog-close>Report</button>
+        <button type="submit" class="btn btn-danger" style="margin-left: 10px;" mat-dialog-close>Close</button>
+      </div>
+    </form>
+  </div>
+</div>

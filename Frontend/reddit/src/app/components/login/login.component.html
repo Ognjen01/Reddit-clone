@@ -1,0 +1,17 @@
+<div class="col-md-4 offset-md-4 mt-4 center">
+  <div class="outlinedDiv" style="margin-top: 170px;">
+    <h2>Login</h2>
+    <form style="margin-top: 40px;" (ngSubmit)="tryLogin($event)">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="login.username">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="login.password">
+      </div>
+      <input class="btn btn-primary pull-right" type="submit" (click)="tryLogin($event)" value="Login" />
+    </form>
+    <p (click)="goToRegistration($event)" style="margin-top: 10px;">Register</p>
+  </div>
+</div>

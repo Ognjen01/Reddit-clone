@@ -1,0 +1,26 @@
+<div class="col-md-3 offset-md-3 mt-3 center">
+    <div class="outlinedDiv" style="width: 600px; background-color: white; margin-top: 80px;">
+      <h2>Edit post</h2>
+      <form>
+        <div class="mb-3">
+          <label for="titleInput" class="form-label">Title</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Text</label>
+          <input type="text" class="form-control" name="text" [(ngModel)]="post.text"
+            style="height: 100px;">
+        </div>
+        <!-- <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Flairs</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div> -->
+        <div style="text-align: center;">
+          <div>
+            <button type="submit" class="btn btn-primary" (click)="savePost($event)">Save</button>
+            <button type="submit" (click)="deletePost($event)" class="btn btn-danger" style="border-radius: 10px; margin-left: 10px;">Delete post</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

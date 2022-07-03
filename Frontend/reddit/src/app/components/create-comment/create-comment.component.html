@@ -1,0 +1,17 @@
+<div class="col-md-3 offset-md-3 mt-3 center">
+  <div class="outlinedDiv" style="width: 600px; background-color: white; margin-top: 80px;">
+    <h2>New comment</h2>
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Text</label>
+        <input type="text" class="form-control" name="text" [(ngModel)]="newComment.text" required
+          style="height: 100px;" #textNgModel="ngModel">
+          <small *ngIf="textNgModel.touched && textNgModel.errors?.['required']" class="text-danger">
+            Text is required</small>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary" (click)="createComment($event)" mat-dialog-close>Comment</button>
+      </div>
+    </form>
+  </div>
+</div>

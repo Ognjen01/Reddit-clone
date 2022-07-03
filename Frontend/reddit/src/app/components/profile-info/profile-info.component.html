@@ -1,0 +1,15 @@
+<div style="padding: 10px;">
+    <div style="width: 300px; background-color: white">
+        <div class="outlinedDiv" style="margin-top: 10px; display: block; padding-top: 20px; text-align: center;">
+            <img src="assets/avatar.webp" alt="" width="120" height="120" style="border-radius: 50%;">
+            <h5 style="margin-top: 13px;" >{{user.username}}</h5>
+            <p class="card-text" style="margin-top: 20px;">{{user.description}} </p>
+            <h3 style="margin-top: 13px;" >Karma: {{karma.number}}</h3>
+            <div style="display: block; padding: 10px;">
+                <button type="submit" *ngIf="currentLoggedUser.userId == user.userId" (click)="editProfile($event)" class="btn btn-primary" style="border-radius: 10px;">Edit</button>
+            </div>
+            <button type="submit" *ngIf="currentLoggedUser.userId == user.userId" (click)="editPassword($event)" class="btn btn-primary" style="border-radius: 10px;">Change password</button>
+            <!-- <button type="submit" class="btn btn-danger" (click)="suspendUser($event)">Suspend</button> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<main style="padding-top: 65px;" class="col-md-10 offset-md-1 mt-0 center">
+  <section class="banners" style="justify-content: center;">
+    <div *ngFor="let report of reports" style="padding-top: 10px;">
+      <div style="display: flex;
+        justify-content: center;">
+        <app-banned-post [report]="report"></app-banned-post>
+      </div>
+    </div>
+  </section>
+  <section class="product-area">
+    <!-- TODO: Create product list component -->
+  </section>
+</main>

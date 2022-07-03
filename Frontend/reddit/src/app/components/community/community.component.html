@@ -1,0 +1,16 @@
+<main style="padding-top: 50px;" class="col-md-4 offset-md-2 mt-4 center">
+  <section class="banners">
+    <div style="display: flex;">
+      <div>
+        <!-- <app-admin-panel></app-admin-panel> -->
+        <div *ngFor="let post of postsList" style="padding-top: 10px;">
+          <div style="display: flex;
+                justify-content: center;">
+            <app-text-post [post]="post"></app-text-post>
+          </div>
+        </div>
+      </div>
+      <app-community-info [communityData]="communityInformation" style="margin-left: 20px;"></app-community-info>
+    </div>
+  </section>
+</main>

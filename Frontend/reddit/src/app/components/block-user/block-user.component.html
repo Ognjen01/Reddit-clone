@@ -1,0 +1,17 @@
+<div style="text-align:center;">
+    <div class="outlinedDiv" style="width: 300px;">
+      <h2>Block user in community {{community.name}}</h2>
+      <form>
+        <div class="mb-3" style="position: relative;">
+          <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+            <option value='' disabled selected>Select user</option>
+            <option *ngFor="let user of allUsers; let i = index" [value]="user.userId"> {{user.username}} </option>
+          </select>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary" (click)="block($event)" mat-dialog-close>Block</button>
+          <button type="submit" class="btn btn-primary" mat-dialog-close style="margin-left: 10px;">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>

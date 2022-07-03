@@ -1,0 +1,17 @@
+<div class="col-md-3 offset-md-3 mt-3 center">
+    <div class="outlinedDiv" style="width: 600px; background-color: white; margin-top: 80px;">
+      <h2>Add rule</h2>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Text</label>
+          <input type="text" class="form-control" name="ruleDesc" [(ngModel)]="rule.description" required
+          #ruleNgModel="ngModel">
+          <small *ngIf="ruleNgModel.touched && ruleNgModel.errors?.['required']" class="text-danger">
+            Rule is required</small>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary" (click)="saveRule($event)">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<div class="col-md-4 offset-md-4 mt-4 center">
+  <div class="outlinedDiv" style="margin-top: 100px; margin-bottom: 100px;">
+    <h2>Edit profile information</h2>
+    <img src="assets/avatar.webp" alt="" width="120" height="120" style="border-radius: 50%;">
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Username</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="user.username">
+      </div>
+      <div class="mb-3">
+        <label for="displayName" class="form-label">Displayed name</label>
+        <input type="email" class="form-control" name="displayName" [(ngModel)]="user.displayName">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="user.email">
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" name="description" [(ngModel)]="user.description" style="height: 100px;">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="saveUserInformation($event)">Save</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/compose-model-1654204440852.xml" value="0.27280405405405406" />
+        <entry key="../../../../../../layout/compose-model-1654204464974.xml" value="0.27280405405405406" />
+        <entry key="../../../../../../layout/compose-model-1654204495837.xml" value="0.27280405405405406" />
+        <entry key="../../../../../../layout/compose-model-1654204502476.xml" value="0.31666666666666665" />
+        <entry key="../../../../../../layout/compose-model-1654521574286.xml" value="0.14695945945945946" />
+        <entry key="../../../../../../layout/compose-model-1654521717751.xml" value="0.14695945945945946" />
+        <entry key="../../../../layout/compose-model-1650804307941.xml" value="0.1814814814814815" />
+        <entry key="../../../../layout/compose-model-1650804510902.xml" value="0.1814814814814815" />
+        <entry key="../../../../layout/compose-model-1650804535161.xml" value="0.1814814814814815" />
+        <entry key="../../../../layout/compose-model-1650804547094.xml" value="0.1814814814814815" />
+        <entry key="../../../../layout/compose-model-1650806293498.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1651074536200.xml" value="0.18703703703703703" />
+        <entry key="../../../../layout/compose-model-1651077956960.xml" value="0.18703703703703703" />
+        <entry key="../../../../layout/compose-model-1651905653738.xml" value="0.5" />
+        <entry key="../../../../layout/compose-model-1651905699545.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1651905992837.xml" value="0.2179054054054054" />
+        <entry key="../../../../layout/compose-model-1651908083179.xml" value="0.2179054054054054" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.163" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="true" project-jdk-name="12" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

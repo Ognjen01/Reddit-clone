@@ -1,0 +1,65 @@
+<div class="col-md-4 offset-md-4 mt-4 center">
+  <div class="outlinedDiv" style="margin-top: 100px; background-color: white;">
+    <h2>Edit community</h2>
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="email" class="form-control" name="name" [(ngModel)]="community.name">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Description</label>
+        <input type="email" class="form-control" name="description" [(ngModel)]="community.description">
+      </div>
+      <!-- Dodavanje tabele za pravila -->
+        <table class="table table-striped pera" style="text-align: left;">
+          <thead>
+            <tr>
+              <th>Rule name </th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rule of community.rules" >
+              <td>{{rule.description}}</td>
+              <td><button type="submit" class="btn btn-danger" style="border-radius: 10px; margin-left: 10px;"
+                  (click)="deleteRule($event, rule.ruleId)">Delete</button></td>
+              <td><button type="submit" class="btn btn-primary" style="border-radius: 10px; margin-left: 10px;"
+                  (click)="editRule($event, rule)">Edit</button></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td><button type="submit" class="btn btn-primary" style="border-radius: 10px; margin-left: 10px;"
+                  (click)="addRule($event)">Add</button></td>
+            </tr>
+          </tbody>
+        </table>       
+      <!-- Dodavanje tabele za tagove -->
+      <table class="table table-striped pera" style="text-align: left;">
+        <thead>
+          <tr>
+            <th>Flair name</th>
+            <th> </th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flair of communityFlairs">
+            <td>{{flair.name}}</td>
+            <td><button type="submit" class="btn btn-danger" style="border-radius: 10px; margin-left: 10px;"
+                (click)="deleteFlair($event, flair.flairId)">Delete</button></td>
+            <td><button type="submit" class="btn btn-primary" style="border-radius: 10px; margin-left: 10px;"
+                (click)="editFLair($event, flair)">Edit</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><button type="submit" class="btn btn-primary" style="border-radius: 10px; margin-left: 10px;"
+                (click)="addFlair($event)">Add</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary" (click)="saveCommunity($event)">Save</button>
+    </form>
+  </div>
+</div>

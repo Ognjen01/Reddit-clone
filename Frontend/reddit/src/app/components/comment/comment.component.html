@@ -1,0 +1,42 @@
+<div class="card" style="width: 800px; margin-left: 10px;">
+  <div class="card-body">
+    <div class="rowLeft">
+      <img src="assets/avatar.webp" alt="" width="40" height="40">
+      <div style="margin-left: 10px;">
+        <h5 style="margin-top: 10px;">u/{{user.username}}</h5>
+      </div>
+    </div>
+    <p class="card-text" style="margin-top: 20px;">{{comment.text}}</p>
+  </div>
+  <div>
+  </div>
+  <div style="padding: 10px;" class="rowLeft">
+    <img src="assets/arrow_up.png" alt="" width="30" height="30" (click)="upvote($event)" style="border-radius: 50%;" [style.background-color]="selectedUpvote ? '#00FF00' : 'FFFFFF'">
+    <h5 style="margin-top: 5px;">{{karma.number}}</h5>
+    <img src="assets/arrow_up.png" alt="" width="30" height="30" class="rotateimg180" (click)="downvote($event)" style="border-radius: 50%;" [style.background-color]="selectedDownvote ? '#FF0000' : 'FFFFFF'">
+    <div class="row"></div>
+    <img src="assets/comment.png" alt="" width="25" height="25" (click)="newComment($event)">
+    <img src="assets/flag.png" alt="" width="25" height="25" (click)="report($event)">
+  </div>
+
+  <div style="padding: 30px; display: flex; justify-content: center;" *ngIf="comments == null || comments?.length != 0"> 
+
+    <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+      <option value='' disabled selected>Popularity sort</option>
+      <option value="sortPopular">Unpopular</option>
+      <option value="sortUnpopular">Popular</option>
+    </select>
+    <div style="width: 10px;"></div>
+    <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+      <option value='' disabled selected>Date sort</option>
+      <option value="sortNewest">Newest</option>
+      <option value="sortOldest">Oldest</option>
+    </select>
+
+  </div>
+  <div *ngFor="let comment of comments" style="padding-top: 10px;">
+    <div>
+      <app-comment [comment]="comment"></app-comment>
+    </div>
+  </div>
+</div>

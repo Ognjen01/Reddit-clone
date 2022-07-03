@@ -1,0 +1,28 @@
+<main style="padding-top: 65px;" class="col-md-10 offset-md-1 mt-0 center">
+  <section class="banners" style="justify-content: center;">
+    <div style="padding: 30px; display: flex; justify-content: center;">
+
+      <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+        <option value='' disabled selected>Popularity sort</option>
+        <option value="sortPopular">Popular</option>
+        <option value="sortUnpopular">Unpopular</option>
+      </select>
+      <div style="width: 10px;"></div>
+      <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+        <option value='' disabled selected>Date sort</option>
+        <option value="sortNewest">Newest</option>
+        <option value="sortOldest">Oldest</option>
+      </select>
+
+    </div>
+    <div *ngFor="let post of poatsList" style="padding-top: 10px;">
+      <div style="display: flex;
+            justify-content: center;">
+        <app-text-post [post]="post"></app-text-post>
+      </div>
+    </div>
+  </section>
+  <section class="product-area">
+    <!-- TODO: Create product list component -->
+  </section>
+</main>

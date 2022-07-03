@@ -1,0 +1,18 @@
+<main style="padding-top: 65px;" class="col-md-10 offset-md-1 mt-0 center">
+  <section class="banners">
+    <div style="margin-top: 20px;">
+      <app-profile-info [user]="user"></app-profile-info>
+      <!-- <app-admin-panel></app-admin-panel> -->
+
+      <div *ngFor="let post of postsList" style="padding-top: 10px;">
+        <div style="display: flex;
+              justify-content: center;">
+          <app-text-post [post]="post"></app-text-post>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product-area">
+    <!-- TODO: Create product list component -->
+  </section>
+</main>

@@ -1,0 +1,37 @@
+<div class="col-md-3 offset-md-3 mt-3 center">
+  <div class="outlinedDiv" style="width: 600px; background-color: white; margin-top: 80px;">
+    <h2>Create new post</h2>
+    <form>
+      <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" (change)="selectChangeHandler($event)">
+          <option value='' disabled selected>Select community</option>
+          <option *ngFor="let community of communities" [value]="community.communityId"> {{community.name}} </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="titleInput" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Text</label>
+        <input type="text" class="form-control" name="text" [(ngModel)]="post.text" style="height: 100px;">
+      </div>
+      <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" (change)="selectFlairChangeHandler($event)">
+          <option value='' disabled selected>Select flair</option>
+          <option value='null'>No flair</option>
+          <option *ngFor="let flair of communityFalirs" [value]="flair.flairId"> {{flair.name}} </option>
+        </select>
+      </div>
+      <div style="text-align: center;">
+        <div style="margin-left:100px;">
+          <input type="file" id="actual-btn" class="uploadBtn" (change)="imageEvent = $event" accept=".png,.jpg" />
+        </div>
+        <div style="margin-top: 20px;">
+          <button type="submit" class="btn btn-primary" (click)="createPost($event)">Create</button>
+          <!-- createPost($event) -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

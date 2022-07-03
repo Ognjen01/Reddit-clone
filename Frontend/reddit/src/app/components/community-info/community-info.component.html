@@ -1,0 +1,39 @@
+<div style="width: 300px; background-color: whitesmoke;">
+    <div class="outlinedDiv" style="margin-top: 10px; display: block; padding-top: 20px; text-align: center;"
+        *ngIf="allLoaded">
+        <h2 style="margin-top: 13px;">r/{{communityData.name}}</h2>
+        <h6 class="card-text" style="margin-top: 20px;">{{communityData.description}}
+        </h6>
+        <div>
+            <button *ngIf="!partOfCommunity" type="submit" class="btn btn-primary" (click)="joinCommunity($event)">Join</button>
+            <button *ngIf="partOfCommunity" type="submit" class="btn btn-primary" (click)="leaveCommunity($event)">Leave</button>
+        </div>
+        <div *ngFor="let rule of communityData.rules">
+            <p class="card-text" style="margin-top: 20px;">{{rule.description}}
+            </p>
+        </div>
+
+        <div *ngFor="let flair of communityFlairs">
+            <h3 class="card-text"
+                style="margin-top: 20px; background-color: orangered; padding: 5px; width: fit-content; border-radius: 8px; color: white;">
+                {{flair.name}}
+            </h3>
+        </div>
+        <div style="display: block;">
+            <button type="submit" *ngIf="currentLoggedUser.userId == communityData.moderatorId"
+                (click)="editCommunity($event)" class="btn btn-primary"
+                style="border-radius: 10px; margin-top: 10px;">Edit</button>
+        </div>
+        <button type="submit" *ngIf="currentLoggedUser.userId == communityData.moderatorId"
+            (click)="deleteCommunity($event)" class="btn btn-danger" style="border-radius: 10px; margin-top: 10px;">Delete
+            community</button>
+        <div *ngIf="role == 'ROLE_ADMIN'">
+            <button type="submit" class="btn btn-danger" style="margin-top: 20px;"
+                (click)="suspendCommunity($event)">Suspend</button>
+        </div>
+        <div *ngIf="currentLoggedUser.userId == communityData.moderatorId">
+            <button type="submit" class="btn btn-danger" style="margin-top: 20px;"
+                (click)="blockUser($event)">Block user</button>
+        </div>
+    </div>
+</div>

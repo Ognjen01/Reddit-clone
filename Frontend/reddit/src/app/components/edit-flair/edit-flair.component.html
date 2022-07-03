@@ -1,0 +1,16 @@
+<div class="col-md-3 offset-md-3 mt-3 center">
+    <div class="outlinedDiv" style="width: 600px; background-color: white; margin-top: 80px;">
+      <h2>edit flair</h2>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Text</label>
+          <input type="text" class="form-control" name="flairText" [(ngModel)]="flair.name" required #flairNgModel="ngModel">
+          <small *ngIf="flairNgModel.touched && flairNgModel.errors?.['required']" class="text-danger">
+            FLair is required</small>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary" (click)="saveFlair($event)">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,17 @@
+<div style="text-align:center;">
+    <div class="outlinedDiv" style="width: 300px;">
+      <h2>Suspend community</h2>
+      <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Text</label>
+            <input type="text" class="form-control" name="text" [(ngModel)]="community.suspendedReason" required
+              style="height: 100px;" #textNgModel="ngModel">
+              <small *ngIf="textNgModel.touched && textNgModel.errors?.['required']" class="text-danger">
+                Text is required</small>
+          </div>
+        <div>
+          <button type="submit" class="btn btn-primary" (click)="suspend($event)">Suspend</button>
+        </div>
+      </form>
+    </div>
+  </div>
